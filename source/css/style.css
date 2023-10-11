@@ -95,7 +95,7 @@ a {
 }
 
 /* 主题 */
-.work-title {
+.work-box {
     padding-bottom: 36px;
     margin-bottom: 36px;
     border-bottom: 1px solid var(--line-1);
@@ -103,10 +103,63 @@ a {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;
-    align-content: center;
+    align-content: flex-start;
+}
+.work-title {
+    font-size: 1.5rem;
 }
 .sub-work-title {
-    font-size: 1em;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* 灵感 */
+.roll-box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+}
+.ins-container {
+    padding-bottom: 36px;
+    margin-bottom: 36px;
+    border-bottom: 1px solid var(--line-1);
+}
+.ins-container .sub-work-title {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+.img-box {
+    border-radius: 5px;
+}
+
+.histroy_list {
+    text-align: start;
+}
+
+#poem_sentence {
+    font-size: 1.2em;
+    padding-bottom: 0.5em;
+}
+
+#poem_info {
+    font-size: 0.8em;
+    padding-bottom: 0.1em;
+}
+
+#poem_title {
+    font-size: 0.8em;
+}
+
+#turth {
+    font-size: 1.2em;
+    padding-bottom: 0.5em;
+}
+
+#history {
+    font-size:1.2em;
+    padding-bottom:0.2em;
 }
 
 /* 文章 */

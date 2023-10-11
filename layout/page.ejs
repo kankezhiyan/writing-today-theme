@@ -1,0 +1,7 @@
+<% if (is_current(theme.menu.灵感)) { %>
+    <%- partial('inspiration') %>
+<% } else if (is_current(theme.menu.分类)) { %>
+    <%- partial('categories') %>
+<% } else if (is_current(theme.menu.关于)) { %>
+    <%- partial('post') %>
+<% } %>
