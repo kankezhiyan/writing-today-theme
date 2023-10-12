@@ -1,41 +1,39 @@
-<div class="roll-box">
-	<div class="work-title">来点灵感</div>
-	<div class="ins-container">
-		<div class="sub-work-title">一句诗词？</div>
-		<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-		<div id="poem_sentence"></div>
-		<div id="poem_info"></div>
-		<div id="poem_title"></div>
-		<script type="text/javascript">
-			jinrishici.load(function (result) {
-				var sentence = document.querySelector("#poem_sentence")
-				var info = document.querySelector("#poem_info")
-				var title = document.querySelector("#poem_title")
-				sentence.innerHTML = '「 ' + result.data.content.slice(0, -1) + ' 」'
-				info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author
-				title.innerHTML = '《' + result.data.origin.title + '》'
-			});
-		</script>
-	</div>
-	<div class="ins-container">
-		<div class="sub-work-title">一点真实？</div>
-		<div id="turth"></div>
-	</div>
-	<div class="ins-container">
-		<div class="sub-work-title">一段历史？</div>
-		<div id="history"></div>
-	</div>
-	<%- js('js/getting.js') %>
-		<div class="ins-container">
-			<div class="sub-work-title">一处风景？</div>
-			<img class="img-box" src="https://imgapi.cn/api.php?fl=fengjing&gs=images">
-		</div>
-		<div class="ins-container">
-			<div class="sub-work-title">一眼倾城？</div>
-			<img class="img-box" src="https://imgapi.cn/api.php?fl=meizi&gs=images">
-		</div>
-		<div class="ins-container">
-			<div class="sub-work-title">一个次元？</div>
-			<img class="img-box" src="https://imgapi.cn/api.php?fl=dongman&gs=images">
-		</div>
+<div class="work-title">来点灵感</div>
+<div class="ins-container">
+	<div class="sub-work-title">一句诗词？</div>
+	<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+	<div id="poem_sentence"></div>
+	<div id="poem_info"></div>
+	<div id="poem_title"></div>
+	<script type="text/javascript">
+		jinrishici.load(function (result) {
+			var sentence = document.querySelector("#poem_sentence")
+			var info = document.querySelector("#poem_info")
+			var title = document.querySelector("#poem_title")
+			sentence.innerHTML = '「 ' + result.data.content.slice(0, -1) + ' 」'
+			info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author
+			title.innerHTML = '《' + result.data.origin.title + '》'
+		});
+	</script>
+</div>
+<div class="ins-container">
+	<div class="sub-work-title">一点真实？</div>
+	<div id="turth"></div>
+</div>
+<div class="ins-container">
+	<div class="sub-work-title">一段历史？</div>
+	<div id="history"></div>
+</div>
+<%- js('js/getting.js') %>
+<div class="ins-container">
+	<div class="sub-work-title">一处风景？</div>
+	<img class="img-box" src="https://imgapi.cn/api.php?fl=fengjing&gs=images">
+</div>
+<div class="ins-container">
+	<div class="sub-work-title">一眼倾城？</div>
+	<img class="img-box" src="https://imgapi.cn/api.php?fl=meizi&gs=images">
+</div>
+<div class="ins-container">
+	<div class="sub-work-title">一个次元？</div>
+	<img class="img-box" src="https://imgapi.cn/api.php?fl=dongman&gs=images">
 </div>

@@ -5,6 +5,9 @@
         <div class="post-main-title">
             <%= page.title %>
         </div>
+        <div class="post-meta" style="margin-bottom: 0;">
+            by：<%= page.author %>
+        </div>
         <div class="post-meta">
             <%- date(page.date, "YYYY-MM-DD") %>
         </div>

@@ -1,6 +1,6 @@
 <section class="archive">
     <ul class="post-archive">
-    <!-- <% site.categories.each(function (category) { %>
+    <% site.categories.each(function (category) { %>
         <span><%= category.name %></span>
         <% category.posts.forEach(function(post) { %>
         <li class="post-item">
@@ -8,6 +8,6 @@
             <a class="post-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
         </li>
         <% }) %>
-    <% }) %> -->
+    <% }) %>
     </ul>
 </section>
