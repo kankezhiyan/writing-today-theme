@@ -29,13 +29,12 @@ gettoday = () => {
 					else { break }
 				}
 				lastItem.push(newItem)
-				history.innerHTML += `<div class="histroy_list">${dataList[newItem].year}年${dataList[newItem].month}月${dataList[newItem].day}日：<br />${dataList[newItem].title}；</div>`
+				history.innerHTML += `<ul class="histroy_list"><li>${dataList[newItem].year}年${dataList[newItem].month}月${dataList[newItem].day}日：</li><li>${dataList[newItem].title}；</li></ul>`
 			}
 		}
 		else {
 			for (i = 0; i < 10; i++) {
-				history.innerHTML += `<div class="histroy_list">${dataList[i].year}年${dataList[i].month}月${dataList[i].day}日：<br />${dataList[i].title}；</div>`
-			}
+				history.innerHTML += `<ul class="histroy_list"><li>${dataList[newItem].year}年${dataList[newItem].month}月${dataList[newItem].day}日：</li><li>${dataList[newItem].title}；</li></ul>`			}
 		}
 	}).catch(() => { })
 }

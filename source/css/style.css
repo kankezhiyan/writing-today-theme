@@ -1,11 +1,12 @@
 @charset "utf-8";
 
 :root {
-    --font-color-0: #04077e;
+    --font-color-0: #04377e;
     --font-color-1: #000;
     --font-color-2: #666;
     --font-color-3: #aaa;
     --bg-color-1: #eee;
+    --bg-color-2: #ccc;
     --line-1: #ccc;
     --line-2: #ddd;
 }
@@ -94,16 +95,48 @@ a {
     transition: opacity ease-in-out .5s;
 }
 
-/* 主题 */
+/* 公告 */
 .work-box {
     padding-bottom: 36px;
     margin-bottom: 36px;
     border-bottom: 1px solid var(--line-1);
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: flex-start;
     align-content: flex-start;
+    align-items: center;
+}
+
+.box-left {
+    padding-right: 20px;
+}
+
+.box-left a {
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 2px solid var(--line-1);
+    border-radius: 5px;
+    align-self: center;
+}
+
+.box-left a:hover {
+    background: var(--bg-color-2);
+    transition: background ease-in-out .2s;
+}
+
+.box-right {
+    position: relative;
+    padding-left: 20px;
+}
+
+.box-right::before {
+    content: '';
+    width: 2px;
+    height: 100%;
+    background-color: var(--line-1);
+    position: absolute;
+    left: 0;
 }
 
 .work-title {
@@ -115,14 +148,21 @@ a {
 
 .sub-work-title {
     font-size: 1rem;
-    margin-bottom: 10px;
 }
 
 /* 灵感 */
+.ins-title {
+    padding-bottom: 36px;
+    margin-bottom: 36px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--font-color-1);
+}
+
 .ins-container {
     padding-bottom: 24px;
     margin-bottom: 24px;
-    border-bottom: 1px solid var(--line-1);
+    border-bottom: 1px dashed var(--line-1);
 }
 
 .ins-container .sub-work-title {
@@ -130,36 +170,43 @@ a {
     margin-bottom: 20px;
 }
 
-.img-box {
-    border-radius: 5px;
-}
-
-.histroy_list {
-    text-align: start;
-}
-
 #poem_sentence {
-    font-size: 1.2em;
-    padding-bottom: 0.5em;
+    font-size: 1.2rem;
+    padding-bottom: 0.5rem;
 }
 
 #poem_info {
-    font-size: 0.8em;
-    padding-bottom: 0.1em;
+    font-size: 0.8rem;
+    padding-bottom: 0.1rem;
 }
 
 #poem_title {
-    font-size: 0.8em;
+    font-size: 0.8rem;
 }
 
 #turth {
-    font-size: 1.2em;
-    padding-bottom: 0.5em;
+    font-size: 1rem;
 }
 
 #history {
-    font-size:1.2em;
-    padding-bottom:0.2em;
+    font-size: 1rem;
+}
+
+#history .histroy_list {
+    text-align: start;
+    background: var(--bg-color-1);
+}
+
+#history .histroy_list:nth-child(odd) {
+    background: #fff;
+}
+
+#history .histroy_list li:nth-child(odd) {
+    font-size: 1.2rem;
+}
+
+.img-box {
+    border-radius: 10px;
 }
 
 /* 文章 */
