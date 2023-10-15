@@ -1,24 +1,34 @@
-<div class="ins-title">来点灵感</div>
+<div class="work-box">
+	<div class="box-left"><div id="reflash">再来一批</div></div>
+	<div class="box-right">
+		<div class="work-title">新鲜灵感已到货</div>
+	</div>
+</div>
 <div class="ins-container">
 	<div class="sub-work-title">一句诗词？</div>
 	<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 	<div id="poem_sentence"></div>
 	<div id="poem_info"></div>
-	<div id="poem_title"></div>
 	<script type="text/javascript">
 		jinrishici.load(function (result) {
 			var sentence = document.querySelector("#poem_sentence")
 			var info = document.querySelector("#poem_info")
-			var title = document.querySelector("#poem_title")
 			sentence.innerHTML = '「 ' + result.data.content.slice(0, -1) + ' 」'
-			info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author
-			title.innerHTML = '《' + result.data.origin.title + '》'
+			info.innerHTML = '《' + result.data.origin.title + '》' + '--【' + result.data.origin.dynasty + '】' + result.data.origin.author
 		});
 	</script>
 </div>
 <div class="ins-container">
 	<div class="sub-work-title">一点真实？</div>
 	<div id="turth"></div>
+</div>
+<div class="ins-container">
+	<div class="sub-work-title">一曲热评？</div>
+	<div>
+		<div id="music-info"></div>
+		<div id="music-comment"></div>
+		<div id="comment-by"></div>
+	</div>
 </div>
 <div class="ins-container">
 	<div class="sub-work-title">一段历史？</div>
