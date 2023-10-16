@@ -1,5 +1,10 @@
+<div class="cat-list">
+    <div id="the-cat-btn" class="cat-btn">类型</div>
+    <div id="the-author-btn" class="cat-btn">作者</div>
+    <div id="the-type-btn" class="cat-btn">系列</div>
+</div>
 <section class="archive-list">
-    <ul class="archive" style="display: block;">
+    <ul id="the-cat" class="archive">
         <% site.categories.each(function (category) { %>
             <span>
                 <%= category.name %>
@@ -16,4 +21,55 @@
             <% }) %>
         <% }) %>
     </ul>
+    <ul id="the-author" class="archive" style="display: none;">
+        <% var author_list = [] %>
+        <% site.posts.each(function (post) { %>
+            <% author_list.push(post.author) %>
+        <% }) %>
+        <% const authors_list = Array.from(new Set(author_list)) %>
+        <% authors_list.forEach(function (ath) { %>
+            <span>
+                <%= ath %>
+            </span>
+            <% site.posts.each(function(p) { %>
+                <% if(p.author == ath) { %>
+                    <li>
+                        <span class="archive-date">
+                            <%= date(p.date, "YYYY-MM-DD" ) %>
+                        </span>
+                        <a class="archive-title" href="<%- url_for(p.path) %>">
+                            <%= p.title %>
+                        </a>
+                    </li>
+                <% } %>
+            <% }) %>
+        <% }) %>
+    </ul>
+    <ul id="the-type" class="archive" style="display: none;">
+        <% var type_list = [] %>
+        <% site.posts.each(function (post) { %>
+            <% if(post.type) { %>
+                <% type_list.push(post.type) %>
+            <% } %>
+        <% }) %>
+        <% const types_list = Array.from(new Set(type_list)) %>
+        <% types_list.forEach(function (typ) { %>
+            <span>
+                <%= typ %>
+            </span>
+            <% site.posts.each(function(p) { %>
+                <% if(p.type == typ) { %>
+                    <li>
+                        <span class="archive-date">
+                            <%= date(p.date, "YYYY-MM-DD" ) %>
+                        </span>
+                        <a class="archive-title" href="<%- url_for(p.path) %>">
+                            <%= p.title %>
+                        </a>
+                    </li>
+                <% } %>
+            <% }) %>
+        <% }) %>
+    </ul>
 </section>
+<%- js('js/cat-switch.js') %>
