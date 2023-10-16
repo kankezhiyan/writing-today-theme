@@ -1,5 +1,6 @@
 <div class="cat-list">
-    <div id="the-cat-btn" class="cat-btn">类型</div>
+    <div>分类条件：</div>
+    <div id="the-cat-btn" class="cat-btn showing">类型</div>
     <div id="the-author-btn" class="cat-btn">作者</div>
     <div id="the-type-btn" class="cat-btn">系列</div>
 </div>
@@ -7,6 +8,7 @@
     <ul id="the-cat" class="archive">
         <% site.categories.each(function (category) { %>
             <span>
+                <i class="fa fa-genderless" /></i>
                 <%= category.name %>
             </span>
             <% category.posts.forEach(function(post) { %>
@@ -14,9 +16,14 @@
                     <span class="archive-date">
                         <%= date(post.date, "YYYY-MM-DD" ) %>
                     </span>
-                    <a class="archive-title" href="<%- url_for(post.path) %>">
-                        <%= post.title %>
-                    </a>
+                    <div class="archive-main">
+                        <a class="archive-title" href="<%- url_for(post.path) %>">
+                            <%= post.title %>
+                        </a>
+                        <span class="archive-info">
+                            by：<%= post.author %>
+                        </span>
+                    </div>
                 </li>
             <% }) %>
         <% }) %>
@@ -29,6 +36,7 @@
         <% const authors_list = Array.from(new Set(author_list)) %>
         <% authors_list.forEach(function (ath) { %>
             <span>
+                <i class="fa fa-genderless" /></i>
                 <%= ath %>
             </span>
             <% site.posts.each(function(p) { %>
@@ -37,9 +45,11 @@
                         <span class="archive-date">
                             <%= date(p.date, "YYYY-MM-DD" ) %>
                         </span>
-                        <a class="archive-title" href="<%- url_for(p.path) %>">
-                            <%= p.title %>
-                        </a>
+                        <div class="archive-main">
+                            <a class="archive-title" href="<%- url_for(p.path) %>">
+                                <%= p.title %>
+                            </a>
+                        </div>
                     </li>
                 <% } %>
             <% }) %>
@@ -55,6 +65,7 @@
         <% const types_list = Array.from(new Set(type_list)) %>
         <% types_list.forEach(function (typ) { %>
             <span>
+                <i class="fa fa-genderless" /></i>
                 <%= typ %>
             </span>
             <% site.posts.each(function(p) { %>
@@ -63,9 +74,11 @@
                         <span class="archive-date">
                             <%= date(p.date, "YYYY-MM-DD" ) %>
                         </span>
-                        <a class="archive-title" href="<%- url_for(p.path) %>">
-                            <%= p.title %>
-                        </a>
+                        <div class="archive-main">
+                            <a class="archive-title" href="<%- url_for(p.path) %>">
+                                <%= p.title %>
+                            </a>
+                        </div>
                     </li>
                 <% } %>
             <% }) %>

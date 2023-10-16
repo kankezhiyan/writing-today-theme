@@ -8,20 +8,29 @@ catswitch = () => {
 
     cat_btn.addEventListener('click', () => {
         cat.style.setProperty('display', 'block')
+        cat_btn.classList.add('showing')
         author.style.setProperty('display', 'none')
+        author_btn.classList.remove('showing')
         type.style.setProperty('display', 'none')
+        type_btn.classList.remove('showing')
     })
 
     author_btn.addEventListener('click', () => {
         cat.style.setProperty('display', 'none')
+        cat_btn.classList.remove('showing')
         author.style.setProperty('display', 'block')
+        author_btn.classList.add('showing')
         type.style.setProperty('display', 'none')
+        type_btn.classList.remove('showing')
     })
 
     type_btn.addEventListener('click', () => {
         cat.style.setProperty('display', 'none')
+        cat_btn.classList.remove('showing')
         author.style.setProperty('display', 'none')
+        author_btn.classList.remove('showing')
         type.style.setProperty('display', 'block')
+        type_btn.classList.add('showing')
     })
 }
 

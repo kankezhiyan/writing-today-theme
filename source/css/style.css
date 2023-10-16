@@ -82,7 +82,7 @@ a {
 
 .nav li {
     padding: 2px 0;
-    margin-right: 24px;
+    margin-right: 16px;
 }
 
 .nav li:last-of-type {
@@ -184,7 +184,6 @@ a {
     font-size: 0.8rem;
 }
 
-
 #turth {
     font-size: 1.2rem;
 }
@@ -219,7 +218,7 @@ a {
 #music-info .cover i {
     font-size: 40px;
     color: #fff;
-    text-shadow: 0 0 5px #000;
+    text-shadow: 0 0 5px var(--font-color-1);
 }
 
 #music-info .info p {
@@ -261,8 +260,8 @@ a {
 
 /* 分类 */
 .cat-list {
+    position: relative;
     margin-bottom: 24px;
-    /* border-bottom: 1px solid var(--line-1); */
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -271,11 +270,24 @@ a {
     align-items: center;
 }
 
+.cat-list .showing {
+    color: var(--font-color-1);
+    border-bottom: 2px solid var(--font-color-1);
+}
+
 .cat-list .cat-btn {
-    padding: 0 5px;
-    margin: 0 5px;
-    border-radius: 5px;
-    border: 2px solid var(--line-1);
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.cat-list .cat-btn:not(:last-child)::after {
+    content: '';
+    width: 2px;
+    height: 50%;
+    background-color: var(--line-1);
+    position: absolute;
+    top: 25%;
+    transform: translateX(10px);
 }
 
 /* 文章 */
@@ -505,7 +517,7 @@ a {
     background: #fff;
 }
 
-.archive li span {
+.archive li .archive-date {
     width: 108px;
     color: var(--font-color-2);
 }
@@ -522,4 +534,9 @@ a {
 .archive-title:hover {
     color: var(--font-color-0);
     transition: color ease-in-out .5s;
+}
+
+.archive-info {
+    padding: 0 5px;
+    border: 0 1px solid var(--font-color-0);
 }
