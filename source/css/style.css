@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 :root {
-    --font-color-0: #04377e;
+    --font-color-0: #105d93;
     --font-color-1: #000;
     --font-color-2: #666;
     --font-color-3: #aaa;
@@ -17,7 +17,7 @@ p {
 }
 
 body {
-    /* font-family: "Montserrat", "SF UI Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", "Helvetica Neue", Helvetica, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif; */
+    font-family: "LXGW WenKai Screen", "webfont", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", "Helvetica Neue", Helvetica, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
     font-size: 16px;
     line-height: 1.75;
     letter-spacing: 0.6px;
@@ -63,7 +63,8 @@ a {
 }
 
 .logo {
-    font-size: 2rem;
+    font-family: 'deyi';
+    font-size: 2.2rem;
     font-weight: 600;
     color: var(--font-color-1);
     margin-bottom: 16px;
@@ -92,12 +93,12 @@ a {
 .nav li a {
     color: var(--font-color-1);
     opacity: .6;
-    transition: opacity ease-in-out .5s;
+    transition: opacity ease-in-out .25s;
 }
 
 .nav li a:hover {
     opacity: 1;
-    transition: opacity ease-in-out .5s;
+    transition: opacity ease-in-out .25s;
 }
 
 /* 公告 */
@@ -153,6 +154,7 @@ a {
 
 .sub-work-title {
     font-size: 1rem;
+    cursor: default;
 }
 
 /* 灵感 */
@@ -162,6 +164,7 @@ a {
     border: 2px solid var(--line-1);
     border-radius: 5px;
     align-self: center;
+    cursor: pointer;
 }
 
 .ins-container {
@@ -268,6 +271,7 @@ a {
     justify-content: flex-start;
     align-content: flex-start;
     align-items: center;
+    cursor: default;
 }
 
 .cat-list .showing {
@@ -278,6 +282,11 @@ a {
 .cat-list .cat-btn {
     margin: 0 10px;
     cursor: pointer;
+}
+
+.cat-btn:hover {
+    color: var(--font-color-1);
+    transition: color ease-in-out .25s;
 }
 
 .cat-list .cat-btn:not(:last-child)::after {
@@ -301,7 +310,7 @@ a {
 }
 
 .post-header .logo {
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 .post-header .go-home {
@@ -311,22 +320,22 @@ a {
     background: #fff;
     border: 1px solid #eee;
     margin: 8px 0;
-    transition: background ease-in-out .5s;
+    transition: background ease-in-out .25s;
 }
 
 .post-header .go-home:hover {
     background: var(--bg-color-1);
-    transition: background ease-in-out .5s;
+    transition: background ease-in-out .25s;
 }
 
 .post-header .go-home svg {
     transform: translateX(0);
-    transition: transform ease-in-out .5s;
+    transition: transform ease-in-out .25s;
 }
 
 .post-header .go-home:hover svg {
     transform: translateX(-4px);
-    transition: transform ease-in-out .5s;
+    transition: transform ease-in-out .25s;
 }
 
 .post-list {
@@ -335,6 +344,7 @@ a {
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: stretch;
+    cursor: default;
 }
 
 .post {
@@ -346,17 +356,18 @@ a {
 
 .post-title {
     display: inline-block;
+    font-family: 'deyi';
     font-size: 1.6rem;
     font-weight: 600;
     line-height: 1.5;
     margin-bottom: 12px;
     color: var(--font-color-1);
-    /*transition: color ease-in-out .5s;*/
+    /*transition: color ease-in-out .25s;*/
 }
 
 .post-title:hover {
     color: var(--font-color-0);
-    transition: color ease-in-out .5s;
+    transition: color ease-in-out .25s;
 }
 
 .post-except {
@@ -372,7 +383,7 @@ a {
 .read-more:before,
 .read-more:after {
     display: inline-block;
-    transition: transform ease-in-out .5s;
+    transition: transform ease-in-out .25s;
 }
 
 .read-more:before {
@@ -428,12 +439,12 @@ a {
 .paginator a {
     margin: 4px;
     color: var(--font-color-2);
-    transition: color ease-in-out .5s;
+    transition: color ease-in-out .25s;
 }
 
 .paginator a:hover {
     color: var(--font-color-0);
-    transition: color ease-in-out .5s;
+    transition: color ease-in-out .25s;
 }
 
 .paginator .current {
@@ -455,16 +466,17 @@ a {
 .footer span {
     text-align: center;
     margin-bottom: 8px;
+    cursor: default;
 }
 
 .footer a {
-    color: var(--font-color-3);
-    transition: color ease-in-out .5s;
+    color: var(--font-color-2);
+    transition: color ease-in-out .25s;
 }
 
 .footer a:hover {
     color: var(--font-color-0);
-    transition: color ease-in-out .5s;
+    transition: color ease-in-out .25s;
 }
 
 .post-main {
@@ -479,6 +491,7 @@ a {
 .post-main-title {
     flex: 0 0 100%;
     margin-bottom: 12px;
+    font-family: 'deyi';
     font-size: 1.6rem;
     font-weight: 600;
     line-height: 1.5;
@@ -498,6 +511,7 @@ a {
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: normal;
+    cursor: default;
 }
 
 .archive li {
@@ -528,15 +542,17 @@ a {
 
 .archive-title {
     color: var(--font-color-1);
-    /*transition: color ease-in-out .5s;*/
+    /*transition: color ease-in-out .25s;*/
 }
 
 .archive-title:hover {
     color: var(--font-color-0);
-    transition: color ease-in-out .5s;
+    transition: color ease-in-out .25s;
 }
 
 .archive-info {
-    padding: 0 5px;
-    border: 0 1px solid var(--font-color-0);
+    font-size: 12px;
+    padding: 0 10px;
+    margin: 0 5px;
+    border-left: 2px solid var(--font-color-2);
 }

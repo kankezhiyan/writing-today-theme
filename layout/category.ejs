@@ -11,7 +11,7 @@
                 <i class="fa fa-genderless" /></i>
                 <%= category.name %>
             </span>
-            <% category.posts.forEach(function(post) { %>
+            <% category.posts.forEach(function (post) { %>
                 <li>
                     <span class="archive-date">
                         <%= date(post.date, "YYYY-MM-DD" ) %>
@@ -29,11 +29,11 @@
         <% }) %>
     </ul>
     <ul id="the-author" class="archive" style="display: none;">
-        <% var author_list = [] %>
-        <% site.posts.each(function (post) { %>
-            <% author_list.push(post.author) %>
-        <% }) %>
-        <% const authors_list = Array.from(new Set(author_list)) %>
+        <% var author_list = []
+        site.posts.each(function (post) {
+            author_list.push(post.author)
+        })
+        const authors_list = Array.from(new Set(author_list)) %>
         <% authors_list.forEach(function (ath) { %>
             <span>
                 <i class="fa fa-genderless" /></i>
@@ -49,6 +49,16 @@
                             <a class="archive-title" href="<%- url_for(p.path) %>">
                                 <%= p.title %>
                             </a>
+                            <span class="archive-info">
+                                <% site.categories.each(function (category) {
+                                    category.posts.some(function (post) {
+                                        if(post.title == p.title) { %>
+                                            <%= category.name %>
+                                            <% return true %>
+                                        <% } %>
+                                    <% }) %>
+                                <% }) %>
+                            </span>
                         </div>
                     </li>
                 <% } %>
@@ -67,6 +77,16 @@
             <span>
                 <i class="fa fa-genderless" /></i>
                 <%= typ %>
+                <span class="archive-info">
+                    <% site.categories.each(function (category) {
+                        category.posts.some(function (post) {
+                            if(post.type == typ) { %>
+                                <%= category.name %>
+                                <% return true %>
+                            <% } %>
+                        <% }) %>
+                    <% }) %>
+                </span>
             </span>
             <% site.posts.each(function(p) { %>
                 <% if(p.type == typ) { %>

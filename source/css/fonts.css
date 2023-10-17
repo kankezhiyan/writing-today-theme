@@ -1,47 +1,26 @@
-/* montserrat-regular - latin */
-
-@font-face
-{
-    font-family: "Montserrat";
-    font-style: normal;
-    font-weight: 400;
-    src: local(""),
-        url("../fonts/montserrat-v23-latin-regular.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url("../fonts/montserrat-v23-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+/* font */
+@font-face {
+	font-family: 'webfont';
+	font-display: swap;
+	src: url('//at.alicdn.com/t/webfont_3wjvjd5iwr2.eot');
+	/*IE9*/
+	src: url('//at.alicdn.com/t/webfont_3wjvjd5iwr2.eot?#iefix') format('embedded-opentype'),
+		/*IE6-IE8*/
+		url('//at.alicdn.com/t/webfont_3wjvjd5iwr2.woff2') format('woff2'),
+		url('//at.alicdn.com/t/webfont_3wjvjd5iwr2.woff') format('woff'),
+		/*chrome、firefox*/
+		url('//at.alicdn.com/t/webfont_3wjvjd5iwr2.ttf') format('truetype'),
+		/*chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+		url('//at.alicdn.com/t/webfont_3wjvjd5iwr2.svg#思源黑体-极细') format('svg');
+	/*iOS 4.1-*/
 }
 
-/* montserrat-600 - latin */
-
-@font-face
-{
-    font-family: "Montserrat";
-    font-style: normal;
-    font-weight: 600;
-    src: local(""),
-        url("../fonts/montserrat-v23-latin-600.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url("../fonts/montserrat-v23-latin-600.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+@font-face {
+	font-family: 'deyi';
+	src: url('../fonts/SmileySans-Oblique.ttf.woff2');
 }
 
-/* montserrat-italic - latin */
-
-@font-face
-{
-    font-family: "Montserrat";
-    font-style: italic;
-    font-weight: 400;
-    src: local(""),
-        url("../fonts/montserrat-v23-latin-italic.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url("../fonts/montserrat-v23-latin-italic.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* montserrat-600italic - latin */
-
-@font-face
-{
-    font-family: "Montserrat";
-    font-style: italic;
-    font-weight: 600;
-    src: local(""),
-        url("../fonts/montserrat-v23-latin-600italic.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url("../fonts/montserrat-v23-latin-600italic.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+@font-face {
+	font-family: 'yueyuan';
+	src: url('../fonts/ZaoZiGongFangYueYuan.otf')
 }
