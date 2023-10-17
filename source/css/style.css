@@ -63,7 +63,7 @@ a {
 }
 
 .logo {
-    font-family: 'deyi';
+    font-family: 'Smiley Sans Oblique';
     font-size: 2.2rem;
     font-weight: 600;
     color: var(--font-color-1);
@@ -356,7 +356,7 @@ a {
 
 .post-title {
     display: inline-block;
-    font-family: 'deyi';
+    font-family: 'Smiley Sans Oblique';
     font-size: 1.6rem;
     font-weight: 600;
     line-height: 1.5;
@@ -491,7 +491,7 @@ a {
 .post-main-title {
     flex: 0 0 100%;
     margin-bottom: 12px;
-    font-family: 'deyi';
+    font-family: 'Smiley Sans Oblique';
     font-size: 1.6rem;
     font-weight: 600;
     line-height: 1.5;
@@ -514,6 +514,14 @@ a {
     cursor: default;
 }
 
+.archive span {
+    margin-bottom: 10px;
+}
+
+.archive span:not(:first-child) {
+    margin-top: 10px;
+}
+
 .archive li {
     display: flex;
     flex-direction: row;
@@ -524,7 +532,7 @@ a {
 }
 
 .archive li:nth-child(odd) {
-    background: #fafafa;
+    background: #fff;
 }
 
 .archive li:nth-child(even) {
@@ -551,7 +559,7 @@ a {
 }
 
 .archive-info {
-    font-size: 12px;
+    font-size: 0.875rem;
     padding: 0 10px;
     margin: 0 5px;
     border-left: 2px solid var(--font-color-2);
