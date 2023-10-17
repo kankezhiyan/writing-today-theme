@@ -7,7 +7,7 @@
 <section class="archive-list">
     <ul id="the-cat" class="archive">
         <% site.categories.each(function (category) { %>
-            <span>
+            <span class="archive-sub">
                 <i class="fa fa-genderless" /></i>
                 <%= category.name %>
             </span>
@@ -35,7 +35,7 @@
         })
         const authors_list = Array.from(new Set(author_list)) %>
         <% authors_list.forEach(function (ath) { %>
-            <span>
+            <span class="archive-sub">
                 <i class="fa fa-genderless" /></i>
                 <%= ath %>
             </span>
@@ -74,7 +74,7 @@
         <% }) %>
         <% const types_list = Array.from(new Set(type_list)) %>
         <% types_list.forEach(function (typ) { %>
-            <span>
+            <span class="archive-sub">
                 <i class="fa fa-genderless" /></i>
                 <%= typ %>
                 <span class="archive-info">

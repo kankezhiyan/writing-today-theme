@@ -536,7 +536,7 @@ a {
 }
 
 .archive li:nth-child(even) {
-    background: #fff;
+    background: #fafafa;
 }
 
 .archive li .archive-date {
