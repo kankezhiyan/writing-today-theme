@@ -5,10 +5,8 @@
                 <a class="post-title" href="<%- url_for(post.path) %>">
                     <%= post.title %>
                 </a>
-                <div class="post-date">by：<%= post.author %>
-                    <a href="<%- url_for(post.categories.data[0].path) %>">
-                        <%= post.categories.data[0].name %>
-                    </a></div>
+                <div><i class="fa fa-bookmark-o"></i><a href="<%- url_for(post.categories.data[0].path) %>" class="post-cat"><%= post.categories.data[0].name %></a></div>
+                <div class="post-date">by：<%= post.author %></div>
                 <div class="post-except">
                     <% if (post.short) { %>
                         <%= post.short %>

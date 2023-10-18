@@ -409,11 +409,15 @@ a {
     color: var(--font-color-3);
 }
 
-.post-date a {
-    padding-left: 5px;
-    font-size: 0.875rem;
-    border-left: 2px solid var(--font-color-3);
+.post-cat {
+    font-size: 1rem;
     color: var(--font-color-3);
+    margin-left: 5px;
+}
+
+.post-cat:hover {
+    color: var(--font-color-0);
+    transition: color ease-in-out .25s;
 }
 
 .paginator {
@@ -521,11 +525,11 @@ a {
     cursor: default;
 }
 
-.archive span {
+.archive .archive-sub {
     margin-bottom: 10px;
 }
 
-.archive span:not(:first-child) {
+.archive .archive-sub:not(:first-child) {
     margin-top: 10px;
 }
 
@@ -570,4 +574,9 @@ a {
     padding: 0 10px;
     margin: 0 5px;
     border-left: 2px solid var(--font-color-2);
+}
+
+/* 辅助 */
+.hiding {
+    display: none;
 }

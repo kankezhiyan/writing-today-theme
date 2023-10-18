@@ -28,7 +28,7 @@
             <% }) %>
         <% }) %>
     </ul>
-    <ul id="the-author" class="archive" style="display: none;">
+    <ul id="the-author" class="archive hiding">
         <% var author_list = []
         site.posts.each(function (post) {
             author_list.push(post.author)
@@ -50,14 +50,7 @@
                                 <%= p.title %>
                             </a>
                             <span class="archive-info">
-                                <% site.categories.each(function (category) {
-                                    category.posts.some(function (post) {
-                                        if(post.title == p.title) { %>
-                                            <%= category.name %>
-                                            <% return true %>
-                                        <% } %>
-                                    <% }) %>
-                                <% }) %>
+                                <%= p.categories.data[0].name %>
                             </span>
                         </div>
                     </li>
@@ -65,7 +58,7 @@
             <% }) %>
         <% }) %>
     </ul>
-    <ul id="the-type" class="archive" style="display: none;">
+    <ul id="the-type" class="archive hiding">
         <% var type_list = [] %>
         <% site.posts.each(function (post) { %>
             <% if(post.type) { %>

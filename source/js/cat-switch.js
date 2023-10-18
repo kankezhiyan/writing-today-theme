@@ -7,29 +7,29 @@ catswitch = () => {
         type = document.getElementById('the-type')
 
     cat_btn.addEventListener('click', () => {
-        cat.style.setProperty('display', 'block')
+        cat.classList.remove('hiding')
         cat_btn.classList.add('showing')
-        author.style.setProperty('display', 'none')
+        author.classList.add('hiding')
         author_btn.classList.remove('showing')
-        type.style.setProperty('display', 'none')
+        type.classList.add('hiding')
         type_btn.classList.remove('showing')
     })
 
     author_btn.addEventListener('click', () => {
-        cat.style.setProperty('display', 'none')
+        cat.classList.add('hiding')
         cat_btn.classList.remove('showing')
-        author.style.setProperty('display', 'block')
+        author.classList.remove('hiding')
         author_btn.classList.add('showing')
-        type.style.setProperty('display', 'none')
+        type.classList.add('hiding')
         type_btn.classList.remove('showing')
     })
 
     type_btn.addEventListener('click', () => {
-        cat.style.setProperty('display', 'none')
+        cat.classList.add('hiding')
         cat_btn.classList.remove('showing')
-        author.style.setProperty('display', 'none')
+        author.classList.add('hiding')
         author_btn.classList.remove('showing')
-        type.style.setProperty('display', 'block')
+        type.classList.remove('hiding')
         type_btn.classList.add('showing')
     })
 }
