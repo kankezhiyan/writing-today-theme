@@ -19,8 +19,3 @@
 	font-family: 'deyi';
 	src: url('../fonts/SmileySans-Oblique.ttf.woff2');
 }
-
-@font-face {
-	font-family: 'yueyuan';
-	src: url('../fonts/ZaoZiGongFangYueYuan.otf')
-}
