@@ -1,22 +1,22 @@
 <%- partial('_partial/bulletin') %>
-    <div class="post-list">
-        <% page.posts.each(function (post) { %>
-            <div class="post">
-                <a class="post-title" href="<%- url_for(post.path) %>">
-                    <%= post.title %>
-                </a>
-                <div><i class="fa fa-bookmark-o"></i><a href="<%- url_for(post.categories.data[0].path) %>" class="post-cat"><%= post.categories.data[0].name %></a></div>
-                <div class="post-date">by：<%= post.author %></div>
-                <div class="post-except">
-                    <% if (post.short) { %>
-                        <%= post.short %>
-                    <% } else { %>
-                        <%- strip_html(post.content).substr(0, 240) %>
-                    <% } %>
-                    <a class="read-more" href="<%- url_for(post.path) %>"> ... </a>
-                </div>
-                <div class="post-date"><%- date(post.date, "YYYY.MM.DD" ) %></div>
+<div class="post-list">
+    <% page.posts.each(function (post) { %>
+        <div class="post">
+            <a class="post-title" href="<%- url_for(post.path) %>">
+                <%= post.title %>
+            </a>
+            <div><i class="fa fa-bookmark-o"></i><a href="<%- url_for(post.categories.data[0].path) %>" class="post-cat"><%= post.categories.data[0].name %></a></div>
+            <div><a href="<%- url_for(post.tags.data[0].path) %>" class="post-author">by：<%= post.tags.data[0].name %></a></div>
+            <div class="post-except">
+                <% if (post.short) { %>
+                    <%= post.short %>
+                <% } else { %>
+                    <%- strip_html(post.content).substr(0, 240) %>
+                <% } %>
+                <a class="read-more" href="<%- url_for(post.path) %>"> ... </a>
             </div>
-            <% }) %>
-    </div>
-    <%- partial('_partial/paginator') %>
+            <div class="post-date"><%- date(post.date, "YYYY.MM.DD" ) %></div>
+        </div>
+        <% }) %>
+</div>
+<%- partial('_partial/paginator') %>

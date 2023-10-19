@@ -299,7 +299,7 @@ a {
     transform: translateX(10px);
 }
 
-/* 文章 */
+/* 卡片 */
 .post-header {
     margin-bottom: 48px;
     display: flex;
@@ -370,6 +370,23 @@ a {
     transition: color ease-in-out .25s;
 }
 
+.post-cat {
+    font-size: 1rem;
+    color: var(--font-color-3);
+    margin-left: 5px;
+}
+
+.post-author {
+    font-size: 0.875rem;
+    color: var(--font-color-3);
+}
+
+.post-cat:hover,
+.post-author:hover {
+    color: var(--font-color-0);
+    transition: color ease-in-out .25s;
+}
+
 .post-except {
     word-break: break-all;
     margin-bottom: 12px;
@@ -409,17 +426,7 @@ a {
     color: var(--font-color-3);
 }
 
-.post-cat {
-    font-size: 1rem;
-    color: var(--font-color-3);
-    margin-left: 5px;
-}
-
-.post-cat:hover {
-    color: var(--font-color-0);
-    transition: color ease-in-out .25s;
-}
-
+/* 分页 */
 .paginator {
     font-size: 0.875rem;
     width: 100%;
@@ -463,6 +470,7 @@ a {
     border: 1px solid var(--font-color-0);
 }
 
+/* 底栏 */
 .footer {
     padding: 24px 0;
     font-size: 0.875rem;
@@ -490,6 +498,7 @@ a {
     transition: color ease-in-out .25s;
 }
 
+/* 文章 */
 .post-main {
     display: flex;
     flex-direction: row;
@@ -516,6 +525,7 @@ a {
     margin-bottom: 32px;
 }
 
+/* 归档 */
 .archive {
     display: flex;
     flex-direction: column;
@@ -564,16 +574,17 @@ a {
     /*transition: color ease-in-out .25s;*/
 }
 
-.archive-title:hover {
-    color: var(--font-color-0);
-    transition: color ease-in-out .25s;
-}
-
 .archive-info {
     font-size: 0.875rem;
     padding: 0 10px;
     margin: 0 5px;
     border-left: 2px solid var(--font-color-2);
+}
+
+.archive-title:hover,
+.archive-info:hover {
+    color: var(--font-color-0);
+    transition: color ease-in-out .25s;
 }
 
 /* 辅助 */

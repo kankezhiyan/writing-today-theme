@@ -20,9 +20,9 @@
                         <a class="archive-title" href="<%- url_for(post.path) %>">
                             <%= post.title %>
                         </a>
-                        <span class="archive-info">
-                            by：<%= post.author %>
-                        </span>
+                        <a class="archive-info" href="<%- url_for(post.tags.data[0].path) %>">
+                            by：<%= post.tags.data[0].name %>
+                        </a>
                     </div>
                 </li>
             <% }) %>
