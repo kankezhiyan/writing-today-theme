@@ -8,29 +8,29 @@ catswitch = () => {
 
     cat_btn.addEventListener('click', () => {
         cat.classList.remove('hiding')
-        cat_btn.classList.add('showing')
+        cat_btn.classList.add('show_btn')
         author.classList.add('hiding')
-        author_btn.classList.remove('showing')
+        author_btn.classList.remove('show_btn')
         type.classList.add('hiding')
-        type_btn.classList.remove('showing')
+        type_btn.classList.remove('show_btn')
     })
 
     author_btn.addEventListener('click', () => {
         cat.classList.add('hiding')
-        cat_btn.classList.remove('showing')
+        cat_btn.classList.remove('show_btn')
         author.classList.remove('hiding')
-        author_btn.classList.add('showing')
+        author_btn.classList.add('show_btn')
         type.classList.add('hiding')
-        type_btn.classList.remove('showing')
+        type_btn.classList.remove('show_btn')
     })
 
     type_btn.addEventListener('click', () => {
         cat.classList.add('hiding')
-        cat_btn.classList.remove('showing')
+        cat_btn.classList.remove('show_btn')
         author.classList.add('hiding')
-        author_btn.classList.remove('showing')
+        author_btn.classList.remove('show_btn')
         type.classList.remove('hiding')
-        type_btn.classList.add('showing')
+        type_btn.classList.add('show_btn')
     })
 }
 

@@ -274,7 +274,7 @@ a {
     cursor: default;
 }
 
-.cat-list .showing {
+.cat-list .show_btn {
     color: var(--font-color-1);
     border-bottom: 2px solid var(--font-color-1);
 }
@@ -313,7 +313,7 @@ a {
     font-size: 1.5rem;
 }
 
-.post-header .go-home {
+.post-header .go-back {
     display: block;
     padding: 10px 20px 8px;
     border-radius: 18px;
@@ -323,17 +323,17 @@ a {
     transition: background ease-in-out .25s;
 }
 
-.post-header .go-home:hover {
+.post-header .go-back:hover {
     background: var(--bg-color-1);
     transition: background ease-in-out .25s;
 }
 
-.post-header .go-home svg {
+.post-header .go-back svg {
     transform: translateX(0);
     transition: transform ease-in-out .25s;
 }
 
-.post-header .go-home:hover svg {
+.post-header .go-back:hover svg {
     transform: translateX(-4px);
     transition: transform ease-in-out .25s;
 }
