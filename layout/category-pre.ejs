@@ -1,0 +1,83 @@
+<div class="cat-list">
+    <div>分类条件：</div>
+    <div id="the-cat-btn" class="cat-btn show_btn">类型</div>
+    <div id="the-author-btn" class="cat-btn">作者</div>
+    <div id="the-type-btn" class="cat-btn">系列</div>
+</div>
+<section class="archive-list">
+    <ul id="the-cat" class="archive">
+        <% site.categories.each(function (category) { %>
+            <span class="archive-sub">
+                <i class="fa fa-genderless"></i>
+                <%= category.name %>
+            </span>
+            <% category.posts.forEach(function (post) { %>
+                <li>
+                    <span class="archive-date">
+                        <%= date(post.date, "YYYY-MM-DD" ) %>
+                    </span>
+                    <div class="archive-main">
+                        <a class="archive-title" href="<%- url_for(post.path) %>">
+                            <%= post.title %>
+                        </a>
+                        <a class="archive-info" href="<%- url_for(post.tags.data[0].path) %>">
+                            by：<%= post.tags.data[0].name %>
+                        </a>
+                    </div>
+                </li>
+            <% }) %>
+        <% }) %>
+    </ul>
+    <% var series_list = [] %>
+    <ul id="the-author" class="archive hiding">
+        <% site.tags.each(function (tag) { %>
+            <%  if (! (tag.name.includes("》》》"))) { %>
+                <span class="archive-sub">
+                    <i class="fa fa-genderless"></i>
+                    <%= tag.name %>
+                </span>
+                <% tag.posts.forEach(function (post) { %>
+                    <li>
+                        <span class="archive-date">
+                            <%= date(post.date, "YYYY-MM-DD" ) %>
+                        </span>
+                        <div class="archive-main">
+                            <a class="archive-title" href="<%- url_for(post.path) %>">
+                                <%= post.title %>
+                            </a>
+                            <a class="archive-info" href="<%- url_for(post.categories.data[0].path) %>">
+                                <%= post.categories.data[0].name %>
+                            </a>
+                        </div>
+                    </li>
+                <% }) %>
+            <% } else {series_list.push(tag)}})%>
+    </ul>
+    <ul id="the-type" class="archive hiding">
+        <% series_list.forEach(function (tag) { %>
+            <span class="archive-sub">
+                <i class="fa fa-genderless"></i>
+                <%= tag.name.replace("》》》", "") %>
+                <a class="archive-info" href="<%- url_for(tag.posts.data[0].categories.data[0].path) %>">
+                    <%= tag.posts.data[0].categories.data[0].name %>
+                </a>
+            </span>
+            <% tag.posts.forEach(function(post) { %>
+                <li>
+                    <span class="archive-date">
+                        <%= date(post.date, "YYYY-MM-DD" ) %>
+                    </span>
+                    <div class="archive-main">
+                        <a class="archive-title" href="<%- url_for(post.path) %>">
+                            <%= post.title %>
+                        </a>
+                        <a class="archive-info" href="<%- url_for(post.tags.data[0].path) %>">
+                        by：<%= post.tags.data[0].name %>
+                        </a>
+                    </div>
+                </li>
+            <% }) %>
+        <% }) %> 
+    </ul>
+</section>
+<%- js('js/cat-switch.js') %>
