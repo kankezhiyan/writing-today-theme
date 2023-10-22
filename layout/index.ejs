@@ -5,8 +5,9 @@
             <a class="post-title" href="<%- url_for(post.path) %>">
                 <%= post.title %>
             </a>
-            <div><i class="fa fa-bookmark-o"></i><a href="<%- url_for(post.categories.data[0].path) %>" class="post-cat"><%= post.categories.data[0].name %></a></div>
-            <div><a href="<%- url_for(post.tags.data[0].path) %>" class="post-author">by：<%= post.tags.data[0].name %></a></div>
+            <div class="post-info"><i class="fa fa-bookmark-o"></i><a href="<%- url_for(post.categories.data[0].path) %>" class="post-cat"><%= post.categories.data[0].name %></a></div>
+            <div class="post-info"><a href="<%- url_for(post.tags.data[0].path) %>" class="post-author">by：<%= post.tags.data[0].name %></a></div>
+            <div class="post-info">约<%= symbolsCount(post) %>字 | 需 <%= symbolsTime(post) %></div>
             <div class="post-except">
                 <% if (post.short) { %>
                     <%= post.short %>

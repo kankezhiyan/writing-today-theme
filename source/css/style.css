@@ -370,6 +370,12 @@ a {
     transition: color ease-in-out .25s;
 }
 
+.post-info {
+    line-height: 1.5;
+    color: var(--font-color-3);
+    font-size: 0.875rem;
+}
+
 .post-cat {
     font-size: 1rem;
     color: var(--font-color-3);
@@ -576,8 +582,8 @@ a {
 
 .archive-info {
     font-size: 0.875rem;
-    padding: 0 10px;
-    margin: 0 5px;
+    padding-left: 10px;
+    margin-left: 5px;
     border-left: 2px solid var(--font-color-2);
 }
 

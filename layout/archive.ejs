@@ -6,6 +6,7 @@
             <div class="archive-main">
                 <a class="archive-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
                 <a class="archive-info" href="<%- url_for(post.tags.data[0].path) %>">by：<%= post.tags.data[0].name %></a>
+                <a class="archive-info" href="<%- url_for(post.categories.data[0].path) %>"><%= post.categories.data[0].name %></a>
             </div>
         </li>
         <% }) %>
