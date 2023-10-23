@@ -17,10 +17,10 @@
     <section class="archive-list">
         <ul id="the-cat" class="archive">
             <% site.categories.each(function (category) { %>
-                <span class="archive-sub">
+                <a  href="<%- url_for(category.path) %>" class="archive-sub">
                     <i class="fa fa-genderless"></i>
                     <%= category.name %>
-                </span>
+                </a>
                 <% category.posts.forEach(function (post) { %>
                     <li>
                         <span class="archive-date">
@@ -33,6 +33,9 @@
                             <a class="archive-info" href="<%- url_for(post.tags.data[0].path) %>">
                                 by：<%= post.tags.data[0].name %>
                             </a>
+                            <% if (post.tags.data.length > 1) { %>
+                                <a class="archive-info" href="<%- url_for(post.tags.data[1].path) %>">《<%= post.tags.data[1].name.replace("》》》", "") %>》</a>
+                            <% } %>
                         </div>
                     </li>
                 <% }) %>
@@ -42,10 +45,10 @@
         <ul id="the-author" class="archive hiding">
             <% site.tags.each(function (tag) { %>
                 <%  if (!(tag.name.includes("》》》"))) { %>
-                    <span class="archive-sub">
+                    <a href="<%- url_for(tag.path) %>" class="archive-sub">
                         <i class="fa fa-genderless"></i>
                         <%= tag.name %>
-                    </span>
+                    </a>
                     <% tag.posts.forEach(function (post) { %>
                         <li>
                             <span class="archive-date">
@@ -65,13 +68,13 @@
         </ul>
         <ul id="the-type" class="archive hiding">
             <% series_list.forEach(function (tag) { %>
-                <span class="archive-sub">
+                <a href="<%- url_for(tag.path) %>" class="archive-sub">
                     <i class="fa fa-genderless"></i>
                     <%= tag.name.replace("》》》", "") %>
-                    <a class="archive-info" href="<%- url_for(tag.posts.data[0].categories.data[0].path) %>">
-                        <%= tag.posts.data[0].categories.data[0].name %>
-                    </a>
-                </span>
+                </a>
+                <a class="archive-info" href="<%- url_for(tag.posts.data[0].categories.data[0].path) %>">
+                    <%= tag.posts.data[0].categories.data[0].name %>
+                </a>          
                 <% tag.posts.forEach(function(post) { %>
                     <li>
                         <span class="archive-date">
@@ -94,7 +97,7 @@
 <% } else { %>
     <section class="archive-list">
         <ul class="archive">
-            <span class="archive-sub">
+            <span class="archive-sub-type">
                 <i class="fa fa-genderless"></i>
                 <%= posts.data[0].categories.data[0].name %>
             </span>

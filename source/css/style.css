@@ -531,6 +531,35 @@ a {
     margin-bottom: 32px;
 }
 
+.post-btn {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.post-btn .fast-btn {
+    padding: 5px;
+    border-radius: 5px;
+    color: var(--font-color-2);
+    margin-right: 10px;
+}
+
+.post-btn .fast-btn:hover {
+    color: var(--font-color-0);
+    transition: color ease-in-out .25s;
+}
+
+.post-btn .fast-btn i {
+    margin-right: 5px;
+}
+
+#w-comment {
+    width: 100%;
+}
+
 /* 归档 */
 .archive {
     display: flex;
@@ -547,6 +576,11 @@ a {
 
 .archive .archive-sub:not(:first-child) {
     margin-top: 10px;
+}
+
+.archive .archive-sub:hover {
+    color: var(--font-color-0);
+    transition: color ease-in-out .25s;
 }
 
 .archive li {
@@ -586,7 +620,7 @@ a {
 .archive-info {
     font-size: 0.875rem;
     padding-left: 10px;
-    margin: 2px 0 2px 5px ;
+    margin: 2px 0 2px 5px;
     border-left: 2px solid var(--font-color-2);
     line-height: 1.2;
 }
@@ -595,6 +629,11 @@ a {
 .archive-info:hover {
     color: var(--font-color-0);
     transition: color ease-in-out .25s;
+}
+
+/* 分类&标签 */
+.archive-sub-type {
+    margin-bottom: 10px;
 }
 
 /* 辅助 */

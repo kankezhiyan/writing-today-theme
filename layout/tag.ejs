@@ -18,9 +18,14 @@
     <% }) %>
     <section class="archive-list">
         <ul class="archive">
-            <span class="archive-sub">
+            <span class="archive-sub-type">
                 <i class="fa fa-genderless"></i>
                 <%= page_tag.name.replace("》》》", "") %>
+                <% if (page_tag.name.includes("》》》")) { %>
+                    <a class="archive-info" href="<%- url_for(page_tag.posts.data[0].categories.data[0].path) %>">
+                        <%= page_tag.posts.data[0].categories.data[0].name %>
+                    </a>
+                <% } %>
             </span>
             <% posts.forEach(function (post) { %>
                 <li>
