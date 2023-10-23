@@ -41,7 +41,7 @@
         <% var series_list = [] %>
         <ul id="the-author" class="archive hiding">
             <% site.tags.each(function (tag) { %>
-                <%  if (! (tag.name.includes("》》》"))) { %>
+                <%  if (!(tag.name.includes("》》》"))) { %>
                     <span class="archive-sub">
                         <i class="fa fa-genderless"></i>
                         <%= tag.name %>
@@ -93,15 +93,12 @@
     <%- js('js/cat-switch.js') %>
 <% } else { %>
     <section class="archive-list">
-        <% let judge = 0 %>
         <ul class="archive">
+            <span class="archive-sub">
+                <i class="fa fa-genderless"></i>
+                <%= posts.data[0].categories.data[0].name %>
+            </span>
             <% posts.forEach(function (post) { %>
-                <% if (judge === 0) { %>
-                    <span class="archive-sub">
-                        <i class="fa fa-genderless"></i>
-                        <%= post.categories.data[0].name %>
-                    </span>
-                <% } %>
                 <li>
                     <span class="archive-date"><%= date(post.date, "YYYY.MM.DD") %></span>
                     <div class="archive-main">
@@ -109,7 +106,6 @@
                         <a class="archive-info" href="<%- url_for(post.tags.data[0].path) %>">by：<%= post.tags.data[0].name %></a>
                     </div>
                 </li>
-                <% judge += 1 %>
             <% }) %>
         </ul>
     </section>

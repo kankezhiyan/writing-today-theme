@@ -1,0 +1,44 @@
+<% let posts = [] %>
+<% site.tags.data.forEach(tag => { %>
+    <% if (is_tag(tag.name)) { %>
+        <%
+            posts = tag.posts
+            posts.data.sort((a, b) => b.date - a.date)
+        %>
+    <% } %>
+<% }) %>
+<% if (!posts.length) { %>
+    <span>11111</span>
+<% } else { %>
+    <% let page_tag = [] %>
+    <% posts.data[0].tags.data.forEach(this_tag => { %>
+        <% if (is_tag(this_tag.name)) { %>
+            <% page_tag = this_tag %>
+        <% } %>
+    <% }) %>
+    <section class="archive-list">
+        <ul class="archive">
+            <span class="archive-sub">
+                <i class="fa fa-genderless"></i>
+                <%= page_tag.name.replace("》》》", "") %>
+            </span>
+            <% posts.forEach(function (post) { %>
+                <li>
+                    <span class="archive-date"><%= date(post.date, "YYYY.MM.DD") %></span>
+                    <div class="archive-main">
+                        <a class="archive-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
+                        <% if (page_tag.name.includes("》》》")) { %>
+                            <a class="archive-info" href="<%- url_for(post.tags.data[0].path) %>">by：<%= post.tags.data[0].name %></a>
+                        <% } else { %>
+                            <a class="archive-info" href="<%- url_for(post.categories.data[0].path) %>"><%= post.categories.data[0].name %></a>
+                            <% if (post.tags.data.length > 1) { %>
+                                <a class="archive-info" href="<%- url_for(post.tags.data[1].path) %>">《<%= post.tags.data[1].name.replace("》》》", "") %>》</a>
+                            <% } %>
+                        <% } %>
+                    </div>
+                </li>
+            <% }) %>
+        </ul>
+    </section>
+    <%- partial('_partial/paginator') %>
+<% } %>

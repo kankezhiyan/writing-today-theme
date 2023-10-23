@@ -573,6 +573,9 @@ a {
 
 .archive-main {
     flex: 0 1 calc(100% - 108px);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .archive-title {
@@ -583,8 +586,9 @@ a {
 .archive-info {
     font-size: 0.875rem;
     padding-left: 10px;
-    margin-left: 5px;
+    margin: 2px 0 2px 5px ;
     border-left: 2px solid var(--font-color-2);
+    line-height: 1.2;
 }
 
 .archive-title:hover,
