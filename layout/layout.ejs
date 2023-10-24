@@ -30,7 +30,7 @@
     <body>
         <div class="paper">
             <div class="paper-main">
-                <% if (is_post()) { %>
+                <% if (is_post() || is_category() || is_tag()) { %>
                     <%- partial('_partial/post-header') %>
                 <% } else { %>
                     <%- partial('_partial/header') %>

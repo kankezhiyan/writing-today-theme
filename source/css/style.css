@@ -267,7 +267,7 @@ a {
     margin-bottom: 24px;
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-content: flex-start;
     align-items: center;
@@ -634,6 +634,16 @@ a {
 /* 分类&标签 */
 .archive-sub-type {
     margin-bottom: 10px;
+}
+
+/* 关于 */
+.about-content {
+    margin-top: 40px;
+}
+
+.about-donate {
+    font-family: 'Smiley Sans Oblique';
+    text-align: center;
 }
 
 /* 辅助 */

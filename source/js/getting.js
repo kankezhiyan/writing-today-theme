@@ -1,19 +1,19 @@
 gettext = () => {
-	// const file = new Request("https://api.btstu.cn/yan/api.php?charset=utf-8&encode=json")
-	// fetch(file, {
-	// 	method: 'GET'
-	// }).then((res) => res.json()).then((data) => {
-	// 	let turth = document.querySelector("#turth")
-	// 	turth.innerHTML = '「 ' + data.text + ' 」'
-	// }).catch(() => { })
-
-	const file = new Request("https://api.shadiao.pro/du")
+	const file = new Request("https://api.btstu.cn/yan/api.php?charset=utf-8&encode=json")
 	fetch(file, {
 		method: 'GET'
 	}).then((res) => res.json()).then((data) => {
 		let turth = document.querySelector("#turth")
-		turth.innerHTML = '「 ' + data.data.text + ' 」'
+		turth.innerHTML = '「 ' + data.text + ' 」'
 	}).catch(() => { })
+
+	// const file = new Request("https://api.shadiao.pro/du")
+	// fetch(file, {
+	// 	method: 'GET'
+	// }).then((res) => res.json()).then((data) => {
+	// 	let turth = document.querySelector("#turth")
+	// 	turth.innerHTML = '「 ' + data.data.text + ' 」'
+	// }).catch(() => { })
 }
 
 getcomment = () => {

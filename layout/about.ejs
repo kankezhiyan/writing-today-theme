@@ -1,0 +1,19 @@
+<div class="cat-list">
+    <div>内容选项：</div>
+    <div id="the-first-btn" class="cat-btn show_btn">倡议</div>
+    <div id="the-second-btn" class="cat-btn">投稿</div>
+    <div id="the-third-btn" class="cat-btn">支持</div>
+</div>
+<section class="archive-list">
+    <div id="first-ul" class="post-md about-content">
+        <%- page.divide %>
+    </div>
+    <div id="second-ul" class="post-md about-content hiding">
+        <%- page.content %>
+    </div>
+    <div id="third-ul" class="post-md about-content hiding">
+        <h4 class="about-donate">建站不易，行行好吧，赏孩子口饭吃。</h4>
+        <img src="<%- url_for('/img/qr.png') %>" alt="qr-code">
+    </div>
+</section>
+<%- js('js/btn-switch.js') %>

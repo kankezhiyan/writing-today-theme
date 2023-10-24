@@ -10,12 +10,12 @@
 <% if (!posts.length) { %>
     <div class="cat-list">
         <div>分类条件：</div>
-        <div id="the-cat-btn" class="cat-btn show_btn">类型</div>
-        <div id="the-author-btn" class="cat-btn">作者</div>
-        <div id="the-type-btn" class="cat-btn">系列</div>
+        <div id="the-first-btn" class="cat-btn show_btn">类型</div>
+        <div id="the-second-btn" class="cat-btn">作者</div>
+        <div id="the-third-btn" class="cat-btn">系列</div>
     </div>
     <section class="archive-list">
-        <ul id="the-cat" class="archive">
+        <ul id="first-ul" class="archive">
             <% site.categories.each(function (category) { %>
                 <a  href="<%- url_for(category.path) %>" class="archive-sub">
                     <i class="fa fa-genderless"></i>
@@ -42,7 +42,7 @@
             <% }) %>
         </ul>
         <% var series_list = [] %>
-        <ul id="the-author" class="archive hiding">
+        <ul id="second-ul" class="archive hiding">
             <% site.tags.each(function (tag) { %>
                 <%  if (!(tag.name.includes("》》》"))) { %>
                     <a href="<%- url_for(tag.path) %>" class="archive-sub">
@@ -66,7 +66,7 @@
                     <% }) %>
                 <% } else {series_list.push(tag)}})%>
         </ul>
-        <ul id="the-type" class="archive hiding">
+        <ul id="third-ul" class="archive hiding">
             <% series_list.forEach(function (tag) { %>
                 <a href="<%- url_for(tag.path) %>" class="archive-sub">
                     <i class="fa fa-genderless"></i>
@@ -93,7 +93,7 @@
             <% }) %> 
         </ul>
     </section>
-    <%- js('js/cat-switch.js') %>
+    <%- js('js/btn-switch.js') %>
 <% } else { %>
     <section class="archive-list">
         <ul class="archive">
