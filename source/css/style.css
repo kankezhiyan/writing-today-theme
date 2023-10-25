@@ -262,34 +262,50 @@ a {
 }
 
 /* 分类 */
-.cat-list {
-    position: relative;
+.cat-box {
     margin-bottom: 24px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: flex-start;
     align-content: flex-start;
     align-items: center;
     cursor: default;
 }
 
-.cat-list .show_btn {
+.cat-title {
+    min-width: 85px;
+}
+
+.cat-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: center;
+}
+
+.cat-list .btn-box {
+    position: relative;
+}
+
+.btn-box .show_btn {
     color: var(--font-color-1);
     border-bottom: 2px solid var(--font-color-1);
 }
 
-.cat-list .cat-btn {
+.btn-box .cat-btn {
     margin: 0 10px;
     cursor: pointer;
 }
 
-.cat-btn:hover {
+.btn-box .cat-btn:hover {
     color: var(--font-color-1);
     transition: color ease-in-out .25s;
 }
 
-.cat-list .cat-btn:not(:last-child)::after {
+.btn-box .cat-btn:not(:last-child)::after {
     content: '';
     width: 2px;
     height: 50%;
@@ -589,7 +605,8 @@ a {
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-content: center;
-    padding: 12px 5px;
+    padding: 10px 5px;
+    margin-left: 10px;
 }
 
 .archive li:nth-child(odd) {
@@ -625,8 +642,18 @@ a {
     line-height: 1.2;
 }
 
+.archive-more {
+    font-size: 1rem;
+    padding-left: 10px;
+    margin: 10px 0;
+    margin-left: 10px;
+    border-left: 3px solid var(--font-color-2);
+    line-height: 1.4;
+}
+
 .archive-title:hover,
-.archive-info:hover {
+.archive-info:hover,
+.archive-more:hover {
     color: var(--font-color-0);
     transition: color ease-in-out .25s;
 }

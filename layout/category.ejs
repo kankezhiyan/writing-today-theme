@@ -8,11 +8,22 @@
     <% } %>
 <% }) %>
 <% if (!posts.length) { %>
-    <div class="cat-list">
-        <div>分类条件：</div>
-        <div id="the-first-btn" class="cat-btn show_btn">类型</div>
-        <div id="the-second-btn" class="cat-btn">作者</div>
-        <div id="the-third-btn" class="cat-btn">系列</div>
+    <div class="cat-box">
+        <div class="cat-title">分类条件：</div>
+        <div class="cat-list">
+            <div class="btn-box">
+                <div id="the-first-btn" class="cat-btn show_btn">类型</div>
+            </div>
+            <div class="btn-box">
+                <div id="the-second-btn" class="cat-btn">作者</div>
+            </div>
+            <div class="btn-box">
+                <div id="the-third-btn" class="cat-btn">系列</div>
+            </div>
+            <div class="btn-box">
+                <a class="cat-btn">查看全部<i class="fa fa-angle-double-right"></i></a>
+            </div>
+        </div>
     </div>
     <section class="archive-list">
         <ul id="first-ul" class="archive">
@@ -21,7 +32,18 @@
                     <i class="fa fa-genderless"></i>
                     <%= category.name %>
                 </a>
-                <% category.posts.forEach(function (post) { %>
+                <% 
+                    let cat_posts = category.posts,
+                        too_long = false
+                    cat_posts.data.sort((a, b) => b.date - a.date)
+                %>
+                <% if (cat_posts.length > 3) { %>
+                    <% 
+                        cat_posts = cat_posts.slice(0, 3)
+                        too_long = true
+                    %>
+                <% } %>
+                <% cat_posts.forEach(function (post) { %>
                     <li>
                         <span class="archive-date">
                             <%= date(post.date, "YYYY-MM-DD" ) %>
@@ -39,6 +61,9 @@
                         </div>
                     </li>
                 <% }) %>
+                <% if (too_long) { %>
+                    <a class="archive-more" href="<%- url_for(category.path) %>">查看更多<i class="fa fa-angle-double-right"></i></a>
+                <% } %>
             <% }) %>
         </ul>
         <% var series_list = [] %>
@@ -49,7 +74,18 @@
                         <i class="fa fa-genderless"></i>
                         <%= tag.name %>
                     </a>
-                    <% tag.posts.forEach(function (post) { %>
+                    <% 
+                        let tag_posts = tag.posts,
+                            too_long = false
+                        tag_posts.data.sort((a, b) => b.date - a.date)
+                    %>
+                    <% if (tag_posts.length > 3) { %>
+                        <% 
+                            tag_posts = tag_posts.slice(0, 3)
+                            too_long = true
+                        %>
+                    <% } %>
+                    <% tag_posts.forEach(function (post) { %>
                         <li>
                             <span class="archive-date">
                                 <%= date(post.date, "YYYY-MM-DD" ) %>
@@ -64,6 +100,9 @@
                             </div>
                         </li>
                     <% }) %>
+                    <% if (too_long) { %>
+                        <a class="archive-more" href="<%- url_for(tag.path) %>">查看更多<i class="fa fa-angle-double-right"></i></a>
+                    <% } %>
                 <% } else {series_list.push(tag)}})%>
         </ul>
         <ul id="third-ul" class="archive hiding">
@@ -74,7 +113,18 @@
                 </a>
                 <a class="archive-info" href="<%- url_for(tag.posts.data[0].categories.data[0].path) %>">
                     <%= tag.posts.data[0].categories.data[0].name %>
-                </a>          
+                </a>
+                <% 
+                    let tag_posts = tag.posts,
+                        too_long = false
+                    tag_posts.data.sort((a, b) => b.date - a.date)
+                %>
+                <% if (tag_posts.length > 3) { %>
+                    <% 
+                        tag_posts = tag_posts.slice(0, 3)
+                        too_long = true
+                    %>
+                <% } %>          
                 <% tag.posts.forEach(function(post) { %>
                     <li>
                         <span class="archive-date">
@@ -90,6 +140,9 @@
                         </div>
                     </li>
                 <% }) %>
+                <% if (too_long) { %>
+                    <a class="archive-more" href="<%- url_for(tag.path) %>">查看更多<i class="fa fa-angle-double-right"></i></a>
+                <% } %>
             <% }) %> 
         </ul>
     </section>
