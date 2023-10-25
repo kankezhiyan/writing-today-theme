@@ -18,9 +18,9 @@
             <%- page.content %>
         </div>
         <div class="post-btn">
-            <a href="<%- url_for(page.tags.data[0].path) %>" class="fast-btn"><i class="fa fa-eye"></i>更多作者作品</a>
+            <a href="<%- url_for(page.tags.data[0].path) %>" class="fast-btn"><i class="fa fa-eye"></i>作者</a>
             <% if (page.tags.data.length > 1) { %>
-                <a href="<%- url_for(page.tags.data[1].path) %>" class="fast-btn"><i class="fa fa-eye"></i>更多系列章节</a>
+                <a href="<%- url_for(page.tags.data[1].path) %>" class="fast-btn"><i class="fa fa-eye"></i>章节</a>
             <% } %>
         </div>
         <% if (page.comment) { %>

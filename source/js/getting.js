@@ -29,8 +29,7 @@ getcomment = () => {
 		info.innerHTML = `<div class="cover"><img src="${datachild.cover}"><audio id="songs" src="https://api.injahow.cn/meting/?type=url&id=${datachild.id}"></audio><div id="play-button" class="music-button"><i class="fa fa-play-circle-o"></i></div><div id="pause-button" class="music-button" style="display:none;"><i class="fa fa-pause-circle-o"></i></div></div><div class="info"><p>${datachild.songs}</p><p>${datachild.sings}</p></div>`
 		comment.innerHTML = datachild.comment
 		by.innerHTML = 'by - ' + datachild.name
-		playaudio()
-		pauseaudio()
+		audiostate()
 	}).catch(() => { })
 }
 
@@ -73,7 +72,7 @@ reflash = () => {
 	})
 }
 
-playaudio = () => {
+audiostate = () => {
 	let play_button = document.getElementById('play-button'),
 		pause_button = document.getElementById('pause-button'),
 		songs = document.getElementById('songs')
@@ -81,19 +80,15 @@ playaudio = () => {
 		songs.play()
 		play_button.style.setProperty('display', 'none')
 		pause_button.style.setProperty('display', 'block')
-		console.log('play')
 	})
-}
-
-pauseaudio = () => {
-	let play_button = document.getElementById('play-button'),
-		pause_button = document.getElementById('pause-button'),
-		songs = document.getElementById('songs')
 	pause_button.addEventListener('click', () => {
 		songs.pause()
 		play_button.style.setProperty('display', 'block')
 		pause_button.style.setProperty('display', 'none')
-		console.log('pause')
+	})
+	songs.addEventListener('ended', () => {
+		play_button.style.setProperty('display', 'block')
+		pause_button.style.setProperty('display', 'none')
 	})
 }
 

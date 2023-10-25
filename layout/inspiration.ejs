@@ -4,46 +4,48 @@
 		<div class="work-title">新鲜灵感已到货</div>
 	</div>
 </div>
-<div class="ins-container">
-	<div class="sub-work-title">一句诗词？</div>
-	<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-	<div id="poem_sentence"></div>
-	<div id="poem_info"></div>
-	<script type="text/javascript">
-		jinrishici.load(function (result) {
-			var sentence = document.querySelector("#poem_sentence")
-			var info = document.querySelector("#poem_info")
-			sentence.innerHTML = '「 ' + result.data.content.slice(0, -1) + ' 」'
-			info.innerHTML = '《' + result.data.origin.title + '》' + '--【' + result.data.origin.dynasty + '】' + result.data.origin.author
-		});
-	</script>
-</div>
-<div class="ins-container">
-	<div class="sub-work-title">一点真实？</div>
-	<div id="turth">「免费的东西总是可能会靠不住的，就像我现在无法收到新句子」</div>
-</div>
-<div class="ins-container">
-	<div class="sub-work-title">一曲热评？</div>
-	<div>
-		<div id="music-info"></div>
-		<div id="music-comment"></div>
-		<div id="comment-by"></div>
+<div>
+	<div class="ins-container">
+		<div class="sub-work-title">一句诗词？</div>
+		<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+		<div id="poem_sentence"></div>
+		<div id="poem_info"></div>
+		<script type="text/javascript">
+			jinrishici.load(function (result) {
+				var sentence = document.querySelector("#poem_sentence")
+				var info = document.querySelector("#poem_info")
+				sentence.innerHTML = '「 ' + result.data.content.slice(0, -1) + ' 」'
+				info.innerHTML = '《' + result.data.origin.title + '》' + '--【' + result.data.origin.dynasty + '】' + result.data.origin.author
+			});
+		</script>
 	</div>
-</div>
-<div class="ins-container">
-	<div class="sub-work-title">一段历史？</div>
-	<nav id="history"></nav>
-</div>
-<%- js('js/getting.js') %>
-<div class="ins-container">
-	<div class="sub-work-title">一处风景？</div>
-	<img class="img-box" src="https://imgapi.cn/api.php?fl=fengjing&gs=images">
-</div>
-<div class="ins-container">
-	<div class="sub-work-title">一眼倾城？</div>
-	<img class="img-box" src="https://imgapi.cn/api.php?fl=meizi&gs=images">
-</div>
-<div class="ins-container">
-	<div class="sub-work-title">一个次元？</div>
-	<img class="img-box" src="https://imgapi.cn/api.php?fl=dongman&gs=images">
+	<div class="ins-container">
+		<div class="sub-work-title">一点真实？</div>
+		<div id="turth">「免费的东西总是可能会靠不住的，就像我现在无法收到新句子」</div>
+	</div>
+	<div class="ins-container">
+		<div class="sub-work-title">一曲热评？</div>
+		<div>
+			<div id="music-info"></div>
+			<div id="music-comment"></div>
+			<div id="comment-by"></div>
+		</div>
+	</div>
+	<div class="ins-container">
+		<div class="sub-work-title">一段历史？</div>
+		<nav id="history"></nav>
+	</div>
+	<%- js('js/getting.js') %>
+		<div class="ins-container">
+			<div class="sub-work-title">一处风景？</div>
+			<img class="img-box" src="https://imgapi.cn/api.php?fl=fengjing&gs=images">
+		</div>
+		<div class="ins-container">
+			<div class="sub-work-title">一眼倾城？</div>
+			<img class="img-box" src="https://imgapi.cn/api.php?fl=meizi&gs=images">
+		</div>
+		<div class="ins-container">
+			<div class="sub-work-title">一个次元？</div>
+			<img class="img-box" src="https://imgapi.cn/api.php?fl=dongman&gs=images">
+		</div>
 </div>

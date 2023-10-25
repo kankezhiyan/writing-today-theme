@@ -1,8 +1,34 @@
 <section class="archive-list">
-    <ul class="archive">
-        <% page.posts.each(function (post) { %>
+    <% 
+    let lastYear,
+        lastMonth,
+        currentYear,
+        currentMonth
+    %>
+    <% site.posts.sort('date', 'desc').each(function(post) { %>
+        <% 
+            currentYear = post.date.year()
+            currentMonth = post.date.format('MM')
+        %>
+        <% if (currentYear != lastYear) { %>
+            <% if (lastYear != null) { %>
+                <% lastMonth = null %>
+            <% } %>
+            <h3 class="archive-year"><%= currentYear %></h3>
+            <% lastYear = currentYear %>
+        <% } %>
+        <% if (currentMonth != lastMonth) { %>
+            <% if (lastMonth != null) { %>
+            </ul>  
+            <% } %>
+            <h4 class="archive-month">
+                <%= currentMonth %>月
+            </h4>
+            <% lastMonth = currentMonth %>
+            <ul class="archive timeline">
+        <% } %>
         <li>
-            <span class="archive-date"><%= date(post.date, "YYYY.MM.DD") %></span>
+            <span class="archive-date"><%= date(post.date, "YY.MM.DD") %></span>
             <div class="archive-main">
                 <a class="archive-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
                 <a class="archive-info" href="<%- url_for(post.tags.data[0].path) %>">by：<%= post.tags.data[0].name %></a>
@@ -12,7 +38,6 @@
                 <% } %>
             </div>
         </li>
-        <% }) %>
-    </ul>
+    <% }) %>
 </section>
 <%- partial('_partial/paginator') %>

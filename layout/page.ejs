@@ -4,4 +4,6 @@
     <%- partial('category') %>
 <% } else if (is_current(theme.menu.关于)) { %>
     <%- partial('about') %>
+<% } else if (is_current('/tags')) { %>
+    <%- partial('tag') %>
 <% } %>

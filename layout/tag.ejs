@@ -8,7 +8,38 @@
     <% } %>
 <% }) %>
 <% if (!posts.length) { %>
-    <span>11111</span>
+    <div class="cat-box">
+        <div class="cat-title">类型：</div>
+        <div class="cat-list">
+            <% site.categories.each(function (category) { %>
+                <div class="btn-box">
+                    <a href="<%- url_for(category.path) %>" class="cat-btn"><%= category.name %></a>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+    <% var index_list = [] %>
+    <div class="cat-box">
+        <div class="cat-title">作者：</div>
+        <div class="cat-list">
+            <% site.tags.each(function (tag) { %>
+                <%  if (!(tag.name.includes("》》》"))) { %>
+            <div class="btn-box">
+                <a href="<%- url_for(tag.path) %>" class="cat-btn"> <%= tag.name %></a>
+            </div>
+            <% } else { index_list.push(tag) }}) %>
+        </div>
+    </div>
+    <div class="cat-box">
+        <div class="cat-title">系列：</div>
+        <div class="cat-list">
+            <% index_list.forEach(function (tag) { %>
+                <div class="btn-box">
+                    <a href="<%- url_for(tag.path) %>" class="cat-btn"> 《<%= tag.name.replace("》》》", "") %>》</a>
+                </div>
+            <% }) %>
+        </div>
+    </div>
 <% } else { %>
     <% let page_tag = [] %>
     <% posts.data[0].tags.data.forEach(this_tag => { %>
@@ -29,7 +60,7 @@
             </span>
             <% posts.forEach(function (post) { %>
                 <li>
-                    <span class="archive-date"><%= date(post.date, "YYYY.MM.DD") %></span>
+                    <span class="archive-date"><%= date(post.date, "YY.MM.DD") %></span>
                     <div class="archive-main">
                         <a class="archive-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
                         <% if (page_tag.name.includes("》》》")) { %>

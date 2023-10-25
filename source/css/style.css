@@ -170,6 +170,9 @@ a {
 .ins-container {
     padding-bottom: 24px;
     margin-bottom: 24px;
+}
+
+.ins-container:not(:last-child) {
     border-bottom: 1px dashed var(--line-1);
 }
 
@@ -253,6 +256,10 @@ a {
     background: #fff;
 }
 
+#history .histroy_list li {
+    margin-left: 1.4rem;
+}
+
 #history .histroy_list li:nth-child(odd) {
     font-size: 1.2rem;
 }
@@ -269,7 +276,7 @@ a {
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     cursor: default;
 }
 
@@ -305,7 +312,7 @@ a {
     transition: color ease-in-out .25s;
 }
 
-.btn-box .cat-btn:not(:last-child)::after {
+.btn-box:not(:last-child) .cat-btn::after {
     content: '';
     width: 2px;
     height: 50%;
@@ -313,6 +320,11 @@ a {
     position: absolute;
     top: 25%;
     transform: translateX(10px);
+}
+
+/* 标签 */
+.btn-box a {
+    color: var(--font-color-2);
 }
 
 /* 卡片 */
@@ -577,6 +589,22 @@ a {
 }
 
 /* 归档 */
+.archive-sub:hover {
+    color: var(--font-color-0);
+    transition: color ease-in-out .25s;
+}
+
+.archive-year {
+    margin-bottom: 20px;
+}
+
+.archive-month {
+    margin: 10px 0;
+    margin-left: 10px;
+    padding-left: 8px;
+    border-left: 4px solid var(--line-1);
+}
+
 .archive {
     display: flex;
     flex-direction: column;
@@ -584,19 +612,11 @@ a {
     justify-content: space-between;
     align-content: normal;
     cursor: default;
+    margin-left: 10px;
 }
 
-.archive .archive-sub {
-    margin-bottom: 10px;
-}
-
-.archive .archive-sub:not(:first-child) {
-    margin-top: 10px;
-}
-
-.archive .archive-sub:hover {
-    color: var(--font-color-0);
-    transition: color ease-in-out .25s;
+.timeline {
+    border-left: 2px solid var(--line-1);
 }
 
 .archive li {
@@ -606,7 +626,10 @@ a {
     justify-content: flex-start;
     align-content: center;
     padding: 10px 5px;
-    margin-left: 10px;
+}
+
+.timeline li {
+    position: relative;
 }
 
 .archive li:nth-child(odd) {
@@ -618,12 +641,24 @@ a {
 }
 
 .archive li .archive-date {
-    width: 108px;
+    width: 90px;
+    color: var(--font-color-2);
+}
+
+.timeline li .archive-date {
+    margin-left: 5px;
+}
+
+.timeline li .archive-date::before {
+    content: '◈';
+    position: absolute;
+    left: -8px;
+    height: 100%;
     color: var(--font-color-2);
 }
 
 .archive-main {
-    flex: 0 1 calc(100% - 108px);
+    flex: 0 1 calc(100% - 90px);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -631,7 +666,6 @@ a {
 
 .archive-title {
     color: var(--font-color-1);
-    /*transition: color ease-in-out .25s;*/
 }
 
 .archive-info {
@@ -643,11 +677,12 @@ a {
 }
 
 .archive-more {
+    color: var(--font-color-2);
     font-size: 1rem;
     padding-left: 10px;
     margin: 10px 0;
     margin-left: 10px;
-    border-left: 3px solid var(--font-color-2);
+    border-left: 3px solid var(--font-color-3);
     line-height: 1.4;
 }
 
