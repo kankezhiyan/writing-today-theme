@@ -23,33 +23,6 @@
                 <a href="<%- url_for(page.tags.data[1].path) %>" class="fast-btn"><i class="fa fa-eye"></i>章节</a>
             <% } %>
         </div>
-        <% if (page.comment) { %>
-            <div id="w-comment"></div>
-            <script type="module">
-                import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
-            
-                init({
-
-                    el: '#w-comment',
-                    serverURL: 'https://writing-page-comment.vercel.app/',
-                    emoji: [
-                            '//unpkg.com/@waline/emojis@1.2.0/bilibili',
-                            '//unpkg.com/@waline/emojis@1.2.0/bmoji',
-                            '//unpkg.com/@waline/emojis@1.2.0/alus',
-                            ],
-                    search: false,
-                    reaction: [
-                                'https://unpkg.com/@waline/emojis@1.2.0/bmoji/bmoji_give_love.png',
-                                'https://unpkg.com/@waline/emojis@1.2.0/bmoji/bmoji_call.png',
-                                'https://unpkg.com/@waline/emojis@1.2.0/bmoji/bmoji_not_open.png',
-                                'https://unpkg.com/@waline/emojis@1.2.0/bmoji/bmoji_emm.png',
-                                'https://unpkg.com/@waline/emojis@1.2.0/bmoji/bmoji_um_2.png',
-                                'https://unpkg.com/@waline/emojis@1.2.0/bmoji/bmoji_hmm.png',
-                                'https://unpkg.com/@waline/emojis@1.2.0/bmoji/bmoji_wail.png',
-                            ],
-                });
-              </script>
-        <% } %>
 
     <% } else { %>
 

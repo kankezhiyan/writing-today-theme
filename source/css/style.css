@@ -584,10 +584,6 @@ a {
     margin-right: 5px;
 }
 
-#w-comment {
-    width: 100%;
-}
-
 /* 归档 */
 .archive-sub:hover {
     color: var(--font-color-0);
