@@ -111,9 +111,11 @@
 }
 .post-md blockquote
 {
-    border-left: 2px solid var(--line-2);
+    border-left: 4px solid var(--line-2);
     padding-left: 12px;
+    padding-right: 2px;
     word-wrap: break-word;
+    background: #efefef;
 }
 
 .post-md .video-container
