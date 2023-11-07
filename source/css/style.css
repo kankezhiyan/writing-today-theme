@@ -591,14 +591,18 @@ a {
 }
 
 .archive-year {
+    font-size: 1.6rem;
     margin-bottom: 20px;
+    cursor: default;
 }
 
 .archive-month {
+    font-size: 1.2rem;
     margin: 10px 0;
     margin-left: 10px;
     padding-left: 8px;
     border-left: 4px solid var(--line-1);
+    cursor: default;
 }
 
 .archive {
