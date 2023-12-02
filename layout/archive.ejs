@@ -1,11 +1,11 @@
+<% 
+var lastYear,
+    lastMonth,
+    currentYear,
+    currentMonth
+%>
 <section class="archive-list">
-    <% 
-    let lastYear,
-        lastMonth,
-        currentYear,
-        currentMonth
-    %>
-    <% site.posts.sort('date', 'desc').each(function(post) { %>
+    <% page.posts.sort('date', 'desc').each(function(post) { %>
         <% 
             currentYear = post.date.year()
             currentMonth = post.date.format('MM')
@@ -14,7 +14,9 @@
             <% if (lastYear != null) { %>
                 <% lastMonth = null %>
             <% } %>
-            <h3 class="archive-year"><%= currentYear %></h3>
+            <h3 class="archive-year">
+                <a class="archive-sub" href="<%- url_for('archives/' + currentYear) %>"><%= currentYear %></a>
+            </h3>
             <% lastYear = currentYear %>
         <% } %>
         <% if (currentMonth != lastMonth) { %>
@@ -22,7 +24,7 @@
             </ul>  
             <% } %>
             <h4 class="archive-month">
-                <%= currentMonth %>月
+                <a class="archive-sub" href="<%- url_for('archives/' + post.date.format('YYYY/MM')) %>"><%= currentMonth %>月</a>
             </h4>
             <% lastMonth = currentMonth %>
             <ul class="archive timeline">

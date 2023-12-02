@@ -585,11 +585,6 @@ a {
 }
 
 /* 归档 */
-.archive-sub:hover {
-    color: var(--font-color-0);
-    transition: color ease-in-out .25s;
-}
-
 .archive-year {
     font-size: 1.6rem;
     margin-bottom: 20px;
@@ -603,6 +598,11 @@ a {
     padding-left: 8px;
     border-left: 4px solid var(--line-1);
     cursor: default;
+}
+
+.archive-sub:hover {
+    color: var(--font-color-0);
+    transition: color ease-in-out .25s;
 }
 
 .archive {
