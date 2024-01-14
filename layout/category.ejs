@@ -1,5 +1,5 @@
 <% let posts = [] %>
-<% let short_longth = 5 %>
+<% let short_longth = theme.max_items_each %>
 <% site.categories.data.forEach(category => { %>
     <% if (is_category(category.name)) { %>
         <%

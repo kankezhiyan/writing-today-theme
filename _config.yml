@@ -4,3 +4,5 @@ menu:
   归档: /archives
   分类: /categories
   关于: /about
+
+max_items_each: 5
