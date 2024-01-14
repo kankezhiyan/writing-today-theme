@@ -1,4 +1,5 @@
 <% let posts = [] %>
+<% let short_longth = 5 %>
 <% site.categories.data.forEach(category => { %>
     <% if (is_category(category.name)) { %>
         <%
@@ -36,9 +37,9 @@
                     too_long = false
                 cat_posts.data.sort((a, b) => b.date - a.date)
             %>
-            <% if (cat_posts.length > 10) { %>
+            <% if (cat_posts.length > short_longth) { %>
                 <% 
-                    cat_posts = cat_posts.slice(0, 10)
+                    cat_posts = cat_posts.slice(0, short_longth)
                     too_long = true
                 %>
             <% } %>
@@ -80,9 +81,9 @@
                         too_long = false
                     tag_posts.data.sort((a, b) => b.date - a.date)
                 %>
-                <% if (tag_posts.length > 10) { %>
+                <% if (tag_posts.length > short_longth) { %>
                     <% 
-                        tag_posts = tag_posts.slice(0, 10)
+                        tag_posts = tag_posts.slice(0, short_longth)
                         too_long = true
                     %>
                 <% } %>
@@ -125,9 +126,9 @@
                     too_long = false
                 tag_posts.data.sort((a, b) => b.date - a.date)
             %>
-            <% if (tag_posts.length > 10) { %>
+            <% if (tag_posts.length > short_longth) { %>
                 <% 
-                    tag_posts = tag_posts.slice(0, 10)
+                    tag_posts = tag_posts.slice(0, short_longth)
                     too_long = true
                 %>
             <% } %>  
