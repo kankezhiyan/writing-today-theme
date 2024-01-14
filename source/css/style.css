@@ -559,6 +559,23 @@ a {
     margin-bottom: 32px;
 }
 
+.post-book {
+    width: 100%;
+    color: var(--font-color-1);
+    margin-bottom: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post-book .book-name {
+    font-size: 1.4em;
+}
+
+.post-book .book-stars {
+    font-size: 1.2em;
+}
+
 .post-btn {
     display: flex;
     align-items: center;

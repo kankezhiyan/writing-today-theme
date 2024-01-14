@@ -14,6 +14,37 @@
         <div class="post-meta">
             <%- date(page.date, "YYYY-MM-DD") %>
         </div>
+        <% if(page.stars) { %>
+            <div class="post-book">
+                <div class="book-name">
+                    <%= page.title %>
+                </div>
+                <div class="book-stars">
+                    <span>评分</span>
+                    <% 
+                        score = page.stars
+                        full_score = score - score % 1
+                        half_score = Math.ceil(score % 1 )
+                        empty_score = Math.floor(5 - score)
+                    %>
+                    <% if(full_score > 0){ 
+                        for (var i = 0; i < full_score; i++) { %>
+                            <i class="fa fa-star"></i>
+                            <% }
+                    } %>
+                    <% if(half_score > 0){ 
+                        for (var i = 0; i < half_score; i++) { %>
+                            <i class="fa fa-star-half-o"></i>
+                            <% }
+                    } %>
+                    <% if(empty_score > 0){ 
+                        for (var i = 0; i < empty_score; i++) { %>
+                            <i class="fa fa-star-o"></i>
+                            <% }
+                    } %>
+                </div>
+            </div>
+        <% } %>
         <div class="post-md">
             <%- page.content %>
         </div>
