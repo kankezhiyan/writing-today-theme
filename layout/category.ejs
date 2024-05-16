@@ -28,7 +28,7 @@
     </div>
     <section id="first-ul" class="archive-list">
         <% site.categories.each(function (category) { %>
-            <a  href="<%- url_for(category.path) %>" class="archive-sub">
+            <a  href="<%- url_for(category.path) %>" class="archive-sub" id="<%= category.name %>">
                 <i class="fa fa-genderless"></i>
                 <%= category.name %>
             </a>
@@ -72,7 +72,7 @@
         <% var series_list = [] %>
         <% site.tags.each(function (tag) { %>
             <%  if (!(tag.name.includes("》》》"))) { %>
-                <a href="<%- url_for(tag.path) %>" class="archive-sub">
+                <a href="<%- url_for(tag.path) %>" class="archive-sub" id="<%= tag.name %>">
                     <i class="fa fa-genderless"></i>
                     <%= tag.name %>
                 </a>
@@ -114,7 +114,7 @@
     </section>
     <section id="third-ul" class="archive-list hiding">
         <% series_list.forEach(function (tag) { %>
-            <a href="<%- url_for(tag.path) %>" class="archive-sub">
+            <a href="<%- url_for(tag.path) %>" class="archive-sub" id="<%= tag.name.replace("》》》", "") %>">
                 <i class="fa fa-genderless"></i>
                 <%= tag.name.replace("》》》", "") %>
             </a>

@@ -585,10 +585,17 @@ a {
     width: 100%;
 }
 
+.post-btn .full-series {
+    margin-right: 0;
+    margin-left: auto;
+}
+
 .post-btn .fast-btn {
     padding: 5px;
-    border-radius: 5px;
     color: var(--font-color-2);
+}
+
+.post-btn:not(:last-child) .fast-btn {
     margin-right: 10px;
 }
 
