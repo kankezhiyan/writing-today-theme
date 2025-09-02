@@ -5,4 +5,5 @@ menu:
   分类: /categories
   关于: /about
 
-max_items_each: 5
+max_items_each: 3
+max_type_each: 5
